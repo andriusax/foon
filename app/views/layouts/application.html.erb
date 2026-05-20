@@ -24,9 +24,10 @@
   </head>
 
   <body class="site">
-    <div class="site__bg" aria-hidden="true"></div>
+    <div class="site__top">
+      <div class="site__bg" aria-hidden="true"></div>
 
-    <header class="site__header">
+      <header class="site__header">
       <nav class="nav" aria-label="Primary">
         <ol class="nav__list">
           <li><span class="nav__num">0</span><%= link_to "Home",     root_path,     class: "nav__link #{'is-active' if current_page?(root_path)}" %></li>
@@ -37,14 +38,15 @@
         </ol>
       </nav>
 
-      <%= link_to "FOON", root_path, class: "brand" %>
+      <span class="brand">FOON</span>
 
       <div class="page-title" aria-hidden="true"><%= content_for(:page_title) %></div>
     </header>
 
-    <main class="site__main">
-      <%= yield %>
-    </main>
+      <main class="site__main">
+        <%= yield %>
+      </main>
+    </div>
 
     <footer class="site__footer">
       <a class="footer__email" href="mailto:foon.sound@gmail.com">foon.sound@gmail.com</a>
