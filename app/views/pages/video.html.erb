@@ -3,16 +3,16 @@
 
 <%
   videos = [
-    "dQw4w9WgXcQ",
-    "9bZkp7q19f0"
+    { id: "VP1am9q0Ijo", start: nil },
+    { id: "96kHzBH6jaQ", start: 230 }
   ]
 %>
 
 <section class="videos">
-  <% videos.each do |id| %>
+  <% videos.each do |video| %>
     <div class="video-embed">
       <iframe
-        src="https://www.youtube-nocookie.com/embed/<%= id %>"
+        src="https://www.youtube-nocookie.com/embed/<%= video[:id] %><%= "?start=#{video[:start]}" if video[:start] %>"
         title="YouTube video"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
