@@ -1,0 +1,39 @@
+<% content_for :title, "Shows — FOON" %>
+<% content_for :page_title, "Shows" %>
+
+<%
+  upcoming = [
+    { date: "30 May",  venue: "Venue",  place: "Place", url: "#" },
+    { date: "12 Jun",  venue: "Venue",  place: "Place", url: "#" }
+  ]
+  past = [
+    { date: "10 Mar",  venue: "Venue",  place: "Place", url: "#" },
+    { date: "02 Feb",  venue: "Venue",  place: "Place", url: "#" }
+  ]
+%>
+
+<section class="shows">
+  <div class="shows__section">
+    <h2 class="shows__heading">Upcoming</h2>
+    <% upcoming.each do |s| %>
+      <article class="show">
+        <div class="show__date"><%= s[:date] %></div>
+        <div class="show__venue"><%= s[:venue].upcase %></div>
+        <div class="show__place"><%= s[:place].upcase %></div>
+        <%= link_to "Tickets", s[:url], class: "btn show__action" %>
+      </article>
+    <% end %>
+  </div>
+
+  <div class="shows__section">
+    <h2 class="shows__heading shows__heading--past">Past</h2>
+    <% past.each do |s| %>
+      <article class="show show--past">
+        <div class="show__date"><%= s[:date] %></div>
+        <div class="show__venue"><%= s[:venue].upcase %></div>
+        <div class="show__place"><%= s[:place].upcase %></div>
+        <span class="btn btn--disabled show__action">Tickets</span>
+      </article>
+    <% end %>
+  </div>
+</section>

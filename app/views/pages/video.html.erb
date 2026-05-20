@@ -1,0 +1,22 @@
+<% content_for :title, "Video — FOON" %>
+<% content_for :page_title, "Video" %>
+
+<%
+  videos = [
+    "dQw4w9WgXcQ",
+    "9bZkp7q19f0"
+  ]
+%>
+
+<section class="videos">
+  <% videos.each do |id| %>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/<%= id %>"
+        title="YouTube video"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  <% end %>
+</section>
